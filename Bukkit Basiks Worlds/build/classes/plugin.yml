@@ -1,0 +1,37 @@
+name: Bukkit Basiks Worlds
+version: 0.1
+description: Mods for world manipulation
+author: Oa10712
+main: me.oa10712.bukkitbasiksworlds.BukkitBasiksWorlds
+depend: [Bukkit Basiks Core]
+softdepend: [Bukkit Basiks Teleports]
+commands:
+    world:
+      description: Preforms world functions
+    createworld:
+      description: Creates a new world
+      usage: /<command>
+    deleteworld:
+      description: Deletes a world
+      usage: /<command> <world>
+    copyworld:
+      description: Copys a world
+      usage: /<command> <original> <new>
+    loadworld:
+      description: Loads a world
+      usage: /<command> <world>
+    evacuateworld:
+      description: Evacuates all players from a world
+      usage: /<command> <from world> <to world>
+    unloadworld:
+      description: Unloads a world
+      usage: /<command> <world>
+    savegame:
+      description: Saves a game
+      usage: /<command> <world> <type> <teams> <maxplayers>
+    loadgame:
+      description: Loads a game
+      usage: /<command> <world>
+    team:
+      description: preforms various team functions
+      usage: /<command> 

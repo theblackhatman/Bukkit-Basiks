@@ -1,0 +1,12 @@
+name: Bukkit Basiks Core
+version: 1.0
+description: The core mods for Bukkit Basiks and shared references
+author: Oa10712
+main: me.oa10712.bukkitbasikscore.BukkitBasiksCore
+commands:
+  spawn:
+    description: Preforms spawn related commands
+    usage: |
+      /<command> [set] [world] [intx] [inty] [intz]
+  assassinate:
+    description: assasinates the targeted player using a mob

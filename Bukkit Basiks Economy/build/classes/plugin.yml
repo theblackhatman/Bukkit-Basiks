@@ -1,0 +1,16 @@
+name: Bukkit Basiks Economy
+version: 0.1
+description: The Economy mods for Bukkit Basiks
+author: Oa10712
+main: me.oa10712.bukkitbasiksenonomy.BukkitBasiksEconomy
+depend: [Bukkit Basiks Core]
+commands:
+  buy:
+    description: Buys an item from the server
+  sell:
+    description: Sells an item to the server
+  worth:
+    description: Displays the worth of the item
+  balance:
+    description: Returns the players current balance
+    aliases: [bal]

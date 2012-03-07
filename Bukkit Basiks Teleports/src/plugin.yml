@@ -1,0 +1,16 @@
+name: Bukkit Basiks Teleports
+version: 0.1
+description: Mods for teleportation
+author: Oa10712
+main: me.oa10712.bukkitbasiksteleports.BukkitBasiksTeleports
+depend: [Bukkit Basiks Core]
+commands:
+  tp:
+    description: Various teleport commands
+    usage: |
+      /<command> <teleporter> <location> - teleports the teleporter to the selected location
+      /<command> <location> - teleports the player to the selected location
+  home:
+    description: Teleports you home
+  sethome:
+    description: Sets your home

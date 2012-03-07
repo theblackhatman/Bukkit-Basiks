@@ -1,0 +1,26 @@
+0:
+  data: false
+  name: null
+1:
+  data: false
+  name: stone
+2:
+  data: false
+  name: grass
+3:
+  data: false
+  name: dirt
+4:
+  data: false
+  name: cobblestone
+5:
+  data: false
+  name: wood
+6:
+  data: true
+  0: sapling.0
+  1: sapling.1
+  2: sapling.2
+7:
+  data: false
+  name: bedrock
