@@ -1,0 +1,9 @@
+name: Bukkit Basiks Fun
+version: 1.0
+description: Mods for general fun times
+author: Oa10712
+main: me.oa10712.bukkitbasiksfun.BukkitBasiksFun
+depend: [Bukkit Basiks Core]
+commands:
+  shock:
+    description: Shocks the targeted player
