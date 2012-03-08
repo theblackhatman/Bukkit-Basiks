@@ -16,7 +16,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Creature;
-import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -179,28 +179,17 @@ public class BukkitBasiksCore extends JavaPlugin implements Listener {
             }
         }
     }
-    public static class assassinate extends Thread{
-        public void assassinate(Player player, String[] args){
+
+    public static class assassinate extends Thread {
+
+        public void assassinate(Player player, String[] args) {
             if (server.getPlayer(args[0]).isOnline()) {
                 Player target = server.getPlayer(args[0]);
-                Creature attacker = null;
-                if (args.length == 2) {
-                    if (EntityType.valueOf(args[1].toUpperCase()).isSpawnable()) {
-                        attacker = (Creature) target.getWorld().spawnCreature(target.getWorld().getSpawnLocation(), EntityType.valueOf(args[1].toUpperCase()));
-                        while (!target.isDead()) {
-                            attacker.setTarget(target);
-                            if (target.isDead()) {
-                                attacker.setHealth(0);
-                            }
-                        }
-                    }
-                } else {
-                    attacker = (Creature) target.getWorld().spawnCreature(target.getWorld().getSpawnLocation(), EntityType.CREEPER);
-                    while (!target.isDead()) {
-                        attacker.setTarget(target);
-                        if (target.isDead()) {
-                            attacker.setHealth(0);
-                        }
+                //Creature attacker = (Creature) target.getWorld().spawnCreature(target.getWorld().getSpawnLocation(), EntityType.valueOf(args[1].toUpperCase()));
+                for (Entity attacker : target.getWorld().getEntities()) {
+                    if(attacker instanceof Creature){
+                        Creature creature = (Creature) attacker;
+                        creature.setTarget(target);
                     }
                 }
             }
