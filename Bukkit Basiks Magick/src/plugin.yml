@@ -1,0 +1,6 @@
+name: Bukkit Basiks Magick
+version: 1.0
+description: Mods for magick spells
+authors: [Oa10712, Warreo]
+main: me.oa10712.bukkitbasiksmagick.BukkitBasiksMagick
+depend: [Bukkit Basiks Core]
