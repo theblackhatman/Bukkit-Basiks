@@ -15,18 +15,21 @@ import org.bukkit.Server;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 
 /**
  *
  * @author Oa10712
  */
 public class balance {
-    public transient BukkitBasiksCore core;
-    Server server = core.getServer();
-    private YamlConfiguration userData;
+
+    Plugin BukkitBasiksEconomy;
+    public balance(Player player) {
+    BukkitBasiksCore core;
+    Server server = BukkitBasiksEconomy.getServer();
+    YamlConfiguration userData;
     File dataFolder = new File(server.getWorldContainer().getPath() + File.separator + "plugins" + File.separator + "Bukkit Basiks");
     File userDataFile = new File(dataFolder.getPath() + File.separator + "userData.yml");
-    public void bal (Player player){
         try {
                 userData = new YamlConfiguration();
                 userData.load(userDataFile);

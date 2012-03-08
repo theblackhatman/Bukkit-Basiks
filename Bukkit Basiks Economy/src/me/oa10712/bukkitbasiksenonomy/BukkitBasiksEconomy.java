@@ -170,18 +170,19 @@ public class BukkitBasiksEconomy extends JavaPlugin implements Listener {
             }
             return true;
         }
-        if (cmd.getName().equalsIgnoreCase("balance")) {
+        if (cmd.getName().equalsIgnoreCase("balance")) {/*
             try {
-                userData = new YamlConfiguration();
-                userData.load(userDataFile);
-                player.sendMessage("Current Ballance: §6$" + String.valueOf(userData.getDouble("Users." + player.getName() + ".Money")));
+            userData = new YamlConfiguration();
+            userData.load(userDataFile);
+            player.sendMessage("Current Ballance: §6$" + String.valueOf(userData.getDouble("Users." + player.getName() + ".Money")));
             } catch (FileNotFoundException ex) {
-                Logger.getLogger(BukkitBasiksEconomy.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BukkitBasiksEconomy.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
-                Logger.getLogger(BukkitBasiksEconomy.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BukkitBasiksEconomy.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InvalidConfigurationException ex) {
-                Logger.getLogger(BukkitBasiksEconomy.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Logger.getLogger(BukkitBasiksEconomy.class.getName()).log(Level.SEVERE, null, ex);
+            }*/
+            this.bal = new balance(player);
         }
         //<editor-fold defaultstate="collapsed" desc="buy">
         if (cmd.getName().equalsIgnoreCase("buy")) {
@@ -517,12 +518,12 @@ public class BukkitBasiksEconomy extends JavaPlugin implements Listener {
                 } else {
                     Location spawnlocat = sign.getBlock().getLocation();
                     EntityType et = EntityType.valueOf(text[2].toUpperCase());
-                    for (int i = 0; i < Integer.parseInt(text[1]); i++) {
-                        player.getWorld().spawnCreature(spawnlocat, et);
-                    }
                     userData.set("Users." + player.getName() + ".Money", curcash - changecash);
                     userData.save(userDataFile);
                     player.sendMessage("Spawned " + text[1] + " " + text[2] + "(s) for §6$" + changecash);
+                    for (int i = 0; i < Integer.parseInt(text[1]); i++) {
+                        player.getWorld().spawnCreature(spawnlocat, et);
+                    }
                 }
             }
         } catch (FileNotFoundException ex) {
